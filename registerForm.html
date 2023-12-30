@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: rgba(216, 216, 216, 0.527);
+        }
+        section{
+            border: 1px solid black;
+            width: 500px;
+            margin: auto;
+            background-color: rgb(32, 32, 32);
+            color: white;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            border-radius: 10px;
+            padding: 20px;
+            margin-top: 200px;
+           
+            height: 300px;
+        }
+        section form{
+            display: flex;
+            flex-direction: column;
+            /* width: 90%; */
+            justify-content: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            /* height: 400px; */
+        }
+        form *{
+            padding: 10px;
+            border-radius: 10px;
+            border: 1px solid rgb(71, 71, 71);
+            margin: 10px;
+            width: 80%;
+
+        }
+        .reg{
+            width: 200px;
+            background-color: rgb(255, 229, 200);
+        }
+        .reg:hover{
+            background-color: rgb(250, 171, 74);
+            transition-duration: 0.5s;
+        }
+        h1{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <h1>Formularz rejestracyjny</h1>
+        <form action="registerUser.php" method="post">
+            <input type="text" placeholder="Login" name="log" >
+            <input type="password" placeholder="Hasło" name="pass">
+            <input type="submit" class="reg" value="Zarejestruj">
+        </form>
+    </section>
+</body>
+</html>
