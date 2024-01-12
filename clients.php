@@ -25,6 +25,7 @@
         mysqli_stmt_execute($kwerenda);
         if(mysqli_stmt_affected_rows($kwerenda) == 1){
             echo "dodano klienta";
+            header('location:clientsPage.php');
         }
         else {
             echo "coś nie pykło";
