@@ -5,26 +5,90 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        .dev_tab{
+        .device{
+            color: black;
+            text-align: center;
+            border: 1px solid gray;
+            padding: 10px;
+            width: 80%;
+            margin: 10px auto;
             
+        }
+        section{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+        }
+        .content{
+            width: 80%;
+            margin: 10px;
+        }
+        .panel{
+            width: 20%;
         }
     </style>
 </head>
 <body>
-<?php 
-    include_once("incl/menuPanel.php");
-?>
-    <table class="dev_tab">
-        <tr>
-            <th>nr</th>
-            <th>numer seryjny</th>
-            <th>producent</th>
-            <th>model</th>
-            <th>kategoria</th>
-        </tr>
-    </table>
-    <div>
-        <input type="text">
-    </div>
+    <section>
+        <div class="panel">
+            <?php include_once("incl/menuPanel.php"); ?>
+        </div>
+        <div class="content">
+            <div class="filter">
+
+            </div>
+            <div class="list">
+
+            </div>
+        </div>
+    </section>
+
+    
+    <script>
+        const d = document
+
+        const list = d.querySelector(".list")
+        const getData = async () =>{
+                const res = await fetch("deviceBase.php", {
+                    method: 'get',
+                    header: 'Content-Type: application/json'
+                })
+                if(!res.ok){
+                    throw new Error("Lol nie działa")
+                }
+                console.log(res)
+                const data = await res.json()
+                console.log(data)
+                Build(data)
+            }
+                
+                
+        
+        window.addEventListener('load', getData)
+        const Build = (data) => {
+            console.log(typeof data)
+            data.forEach(el => {
+                let dev = CreateDevice(el)
+                list.appendChild(dev)
+            })
+
+        }
+        const CreateDevice = (data) => {
+            let div = d.createElement("div")
+            div.className = "device"
+            let h2 = d.createElement("h2")
+            h2.innerText = `${data.producent} ${data.model}`
+           
+            let ptab = [`Producent: ${data.producent}`,
+            `Numer seryjny: ${data.model}`, `Kategoria: ${data.kategoria}`]
+            div.appendChild(h2)
+            ptab.forEach(el => {
+                let p = d.createElement("p")
+                p.innerText = el
+                div.appendChild(p)
+            })
+            return div
+        }
+    </script>
 </body>
 </html>

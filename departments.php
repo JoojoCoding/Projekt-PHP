@@ -14,6 +14,8 @@
           border-radius: 5px;
           color: white;
           font-family: 'Montserrat', sans-serif;
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
           /* box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.1); */
         }
       
@@ -61,6 +63,9 @@
 ?>
 <section class="depart"> 
     <form class="wrapper" action="add_department.php" method="post">
+        <div>
+          
+        </div>
         <label for="nazwa_oddzialu" class="form-label">Nazwa oddziału:</label>
         <input type="text" id="nazwa_oddzialu" name="nazwa_oddzialu" class="form-input" required>
 

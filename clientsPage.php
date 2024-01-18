@@ -54,8 +54,7 @@
         }
 </style>
 <?php
-    include_once("incl/menuPanel.php");
-
+  include_once("incl/menuPanel.php");
 ?>
 <section>
 <form action="clients.php" method="post" class="client-form">
