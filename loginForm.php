@@ -6,13 +6,13 @@
     <title>Document</title>
     <style>
        body{
-            background-color: rgba(216, 216, 216, 0.527);
+        background-color: #151515;  
         }
         section{
-            border: 1px solid black;
+            border: 1px solid rgb(0, 255, 221);
             width: 500px;
             margin: auto;
-            background-color: rgb(32, 32, 32);
+            background-color: #292929;
             color: white;
             font-family: Verdana, Geneva, Tahoma, sans-serif;
             border-radius: 10px;
@@ -42,7 +42,7 @@
         }
         .log{
             width: 200px;
-            background-color: rgb(255, 229, 200);
+            background: linear-gradient(118deg, rgba(27,141,148,1) 36%, rgba(80,241,190,1) 100%);
         }
         .log:hover{
             background-color: rgb(250, 171, 74);
