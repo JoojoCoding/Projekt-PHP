@@ -23,6 +23,7 @@
             mysqli_stmt_execute($kwerenda);
             if(mysqli_stmt_affected_rows($kwerenda) == 1){
                 echo "działa lol";
+                header("location:loginForm.php");
             }
             else {
                 echo "coś nie pykło";

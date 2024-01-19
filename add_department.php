@@ -27,7 +27,7 @@
     else{
         echo "nie zalogowany";
     }
-    header("location:departments.php");
+    header("location:dashboard.php");
     
     
 

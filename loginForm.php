@@ -36,6 +36,7 @@
             padding: 10px;
             border-radius: 10px;
             border: 1px solid rgb(71, 71, 71);
+         
             margin: 10px;
             width: 80%;
 

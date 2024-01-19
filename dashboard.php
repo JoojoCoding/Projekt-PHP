@@ -7,20 +7,31 @@
     
 </head>
 <style>
+  
+    body{
+      margin: 0px;
+      background-color: #151515;
+    }
     .dash{
       display: flex;
       flex-direction: row;
       justify-content: center;
+      width: 100%;
+      margin: 0px;
     }
-    
+    .panel{
+      width: 20%;
+    }
+    .dep {
+      width: 80%;
+      height: 50%;
+    }
     
     </style>
 <body>
   <section class="dash">
-  <?php
-      include_once("incl/menuPanel.php");
-      include_once("departments.php");
-  ?>
+    <div class="panel"> <?php include_once("incl/menuPanel.php"); ?> </div>
+    <div class="dep"> <?php include_once("departments.php"); ?> </div>
   </section>
     
     

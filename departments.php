@@ -1,44 +1,62 @@
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap');
+    ::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #333;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #add8e6;
+  border-radius: 5px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
     .depart{
-        position: absolute;
-        left: 350px;
+        /* position: absolute;
+        left: 350px; */
         display: flex;
         flex-direction: row;
+        width: 100%;
+        height: 50%;
+        
     }
     .wrapper {
           max-width: 500px;
-          margin: 0 auto;
+          margin: 0 5px;
           padding: 20px;
           background-color: #333;
           border-radius: 5px;
+          height: 90vh;
           color: white;
+          margin: 10px;
           font-family: 'Montserrat', sans-serif;
-          display: grid;
-          grid-template-columns: repeat(2, 1fr);
+          /* border: 1px solid rgb(0, 255, 221); */
           /* box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.1); */
-        }
-      
-        .form-label {
-          font-weight: bold;
-          display: block;
-          margin-bottom: 10px;
         }
       
         input[type="text"],
         input[type="tel"],
         input[type="email"] {
-          width: 90%;
-          padding: 10px;
+          width: 70%;
+          padding: 5px;
+          height: 20px;
           border-radius: 5px;
           border: 1px solid #555;
-          margin-bottom: 20px;
+          margin: 15px 5px;
           background-color: #444;
           color: #fff;
         }
       
         .form-submit {
-          background-color: #4CAF50;
+          background: linear-gradient(118deg, rgba(27,141,148,1) 36%, rgba(80,241,190,1) 100%);
           color: white;
           padding: 10px 20px;
           border: none;
@@ -49,13 +67,28 @@
         input[type="submit"]:hover {
           background-color: #45a049;
         }
-        .tab{
-          border-collapse: collapse;
-          margin: 20px;
+        .department-list{
+          /* border: 1px solid rgb(0, 255, 221); */
+          border-radius: 5px;
+          width: 80%;
+          overflow-y: scroll;
+          height: 96vh;
+          margin: 10px;
+          text-align: center;
+          font-family: 'Montserrat', sans-serif ;
+          background-color: #333;
+         
         }
-        .tab *{
-          border: 1px solid black;
+        .zar{
+          color: white;
+        }
+        .department-box{
+          border: 2px solid #b0c4de;
           padding: 10px;
+          margin: 20px;
+          width: 85%;
+          border-radius: 5px;
+          background-color: #add8e6;
         }
 </style>
 <?php
@@ -63,44 +96,18 @@
 ?>
 <section class="depart"> 
     <form class="wrapper" action="add_department.php" method="post">
-        <div>
-          
-        </div>
-        <label for="nazwa_oddzialu" class="form-label">Nazwa oddziału:</label>
-        <input type="text" id="nazwa_oddzialu" name="nazwa_oddzialu" class="form-input" required>
-
-        <label for="ulica" class="form-label">Ulica:</label>
-        <input type="text" id="ulica" name="ulica" class="form-input" required>
-
-        <label for="numer_domu" class="form-label">Numer domu:</label>
-        <input type="text" id="numer_domu" name="numer_domu" class="form-input" required>
-
-        <label for="numer_lokalu" class="form-label">Numer lokalu:</label>
-        <input type="text" id="numer_lokalu" name="numer_lokalu" class="form-input">
-
-        <label for="kod_pocztowy" class="form-label">Kod pocztowy:</label>
-        <input type="text" id="kod_pocztowy" name="kod_pocztowy" class="form-input" required>
-
-        <label for="miejscowosc" class="form-label">Miejscowość:</label>
-        <input type="text" id="miejscowosc" name="miasto" class="form-input" required>
-
-        <label for="telefon" class="form-label">Telefon:</label>
-        <input type="tel" id="telefon" name="telefon" class="form-input" required>
-
+      <h2>Rejestracja oddziału</h2>
+        <input type="text" id="nazwa_oddzialu" name="nazwa_oddzialu" class="form-input" required placeholder="Nazwa oddziału">
+        <input type="text" id="ulica" name="ulica" class="form-input" required placeholder="Ulica">
+        <input type="text" id="numer_domu" name="numer_domu" class="form-input" required placeholder="Numer domu">
+        <input type="text" id="numer_lokalu" name="numer_lokalu" class="form-input" placeholder="Numer Lokalu">
+        <input type="text" id="kod_pocztowy" name="kod_pocztowy" class="form-input" required placeholder="Kod pocztowy">
+        <input type="text" id="miejscowosc" name="miasto" class="form-input" required placeholder="Miejscowość">
+        <input type="tel" id="telefon" name="telefon" class="form-input" required placeholder="Telefon">
         <input type="submit" value="Zarejestruj oddział" class="form-submit">
     </form>
-    <div>
-      <table class="tab">
-        <tr>
-          <th>Nr</th>
-          <th>Nazwa oddziału</th>
-          <th>Ulica</th>
-          <th>Numer domu</th>
-          <th>Numer lokalu</th>
-          <th>kod pocztowy</th>
-          <th>Miasto</th>
-          <th>Telefon</th>
-        </tr>
+      <div class="department-list">
+        <h2 class="zar">Zarejestrowane oddziały</h2>
         <?php
         define('host','localhost');
         define('user','root');
@@ -111,12 +118,15 @@
           mysqli_stmt_execute($kwerenda);
           mysqli_stmt_bind_result($kwerenda,$nr, $firma, $ulica, $nDomu, $nLokalu, $kod, $miasto, $tel);
           while(mysqli_stmt_fetch($kwerenda)){
-            echo "<tr>";
-            echo "<td>$nr</td><td>$firma</td><td>$ulica</td><td>$nDomu</td><td>$nLokalu</td><td>$kod</td><td>$miasto</td><td>$tel</td>";
-            echo "</tr>";
+            echo "<div class='department-box'>";
+              echo "<h2>$firma</h2>";
+              echo "<p>ul. $ulica $nLokalu/$nDomu</p>";
+              echo "<p>Kod pocztowy: $kod</p>";
+              echo "<p>Miejscowość: $miasto</p>";
+              echo "<p>Tel: $tel</p>";
+            echo "</div>";
           }
           mysqli_close($baza);
        ?> 
-      </table>
-    </div>
+      </div>
     </section>
