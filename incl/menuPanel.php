@@ -81,7 +81,7 @@
         <ul class="app-list">
             <li><box-icon type='solid' name='buildings' color="white" size="cssSize" animation="tada-hover"></box-icon><a href="dashboard.php">Dane Oddziału</a></li>
             <li><box-icon type='solid' name='user-detail' color="white" size="cssSize" animation="tada-hover"></box-icon><a href="clientsPage.php">Klienci serwisu</a></li>
-            <li><box-icon name='briefcase' type='solid' color="white" size="cssSize" animation="tada-hover"></box-icon><a href="employees.html">Pracownicy serwisu</a></li>
+            <li><box-icon name='briefcase' type='solid' color="white" size="cssSize" animation="tada-hover"></box-icon><a href="employees.php">Pracownicy serwisu</a></li>
             <li><box-icon type='solid' name='cabinet' color="white" size="cssSize" animation="tada-hover"></box-icon><a href="devices.php">Kartoteka sprzętu</a></li>
         </ul>
         

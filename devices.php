@@ -53,12 +53,8 @@
                     method: 'get',
                     header: 'Content-Type: application/json'
                 })
-                if(!res.ok){
-                    throw new Error("Lol nie działa")
-                }
-                console.log(res)
+                if(!res.ok) throw new Error("Lol nie działa")
                 const data = await res.json()
-                console.log(data)
                 Build(data)
             }
                 
