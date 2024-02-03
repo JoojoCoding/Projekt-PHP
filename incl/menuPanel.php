@@ -4,7 +4,7 @@
      .menu-panel{
         width: 18vw;
         height: 100vh;
-        background-color: black;
+        background-color: #181818;
         position: fixed;
         top: 0px;
         left: 0px;
