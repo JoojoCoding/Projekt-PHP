@@ -20,10 +20,8 @@
     mysqli_stmt_execute($kwerenda);
     mysqli_stmt_bind_result($kwerenda,$id, $nr_ser, $prod, $model, $kat);
     $deviceTab = [];
-    $x = 0;
     while(mysqli_stmt_fetch($kwerenda)){
-        $deviceTab[$x] = new Device($id, $nr_ser, $prod, $model, $kat);
-        $x++;
+        $deviceTab[] = new Device($id, $nr_ser, $prod, $model, $kat);
     }
     $toJSON = json_encode($deviceTab, JSON_PRETTY_PRINT);
     mysqli_close($baza);

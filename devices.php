@@ -26,6 +26,17 @@
         .panel{
             width: 20%;
         }
+        .filter{
+            border: 1px solid black;
+            width: 300px;
+        }
+        .content{
+            display: flex;
+            flex-direction: row;
+        }
+        .device {
+            width: 500px;
+        }
     </style>
 </head>
 <body>
@@ -35,7 +46,13 @@
         </div>
         <div class="content">
             <div class="filter">
-
+                <label for="">kategoria: </label>
+                <select name="" id="">
+                    <option value="default">nie wybrano</option>
+                    <option value="RTV">RTV</option>
+                    <option value="AGD">AGD</option>
+                    <option value="PC">PC</option>
+                </select>
             </div>
             <div class="list">
 
@@ -67,7 +84,6 @@
                 let dev = CreateDevice(el)
                 list.appendChild(dev)
             })
-
         }
         const CreateDevice = (data) => {
             let div = d.createElement("div")
@@ -76,7 +92,7 @@
             h2.innerText = `${data.producent} ${data.model}`
            
             let ptab = [`Producent: ${data.producent}`,
-            `Numer seryjny: ${data.model}`, `Kategoria: ${data.kategoria}`]
+            `Numer seryjny: ${data.nr_seryjny}`, `Kategoria: ${data.kategoria}`]
             div.appendChild(h2)
             ptab.forEach(el => {
                 let p = d.createElement("p")

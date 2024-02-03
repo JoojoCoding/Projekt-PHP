@@ -47,7 +47,6 @@
     <script>
         const d = document
 
-        
         const fetchData = async() => {
             let res = await fetch("http://localhost/phpapp/Projekt-PHP/employeesBase.php", {
                 method: "get",

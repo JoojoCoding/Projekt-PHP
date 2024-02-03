@@ -74,14 +74,18 @@
           border-radius: 5px;
           width: 500px;
           overflow-y: scroll;
+          padding: 10px;
           height: 90vh;
           margin: 10px;
-          text-align: center;
+          /* text-align: center; */
           font-family: 'Montserrat', sans-serif ;
           background-color: #333;
         }
         .zar{
           color: white;
+        }
+        .client-name {
+          font-size: 30px;
         }
 </style>
 
@@ -117,11 +121,11 @@
           
           while(mysqli_stmt_fetch($kwerenda)){
             echo "<div class='client-box'>";
-            echo "<h2>$firma</h2>";
-            echo "<p>ul. $ulica $nLokalu/$nDomu</p>";
-            echo "<p>Kod pocztowy: $kod</p>";
-            echo "<p>Miejscowość: $miasto</p>";
+            echo "<p class='client-name'>$imie $nazw</p>";
+            echo "<p>Nazwa firmy: $firma</p>";
+            echo "<p>Adres: ul. $ulica $nLokalu/$nDomu $kod $miasto</p>";
             echo "<p>Tel: $tel</p>";
+            echo "<p>email: $email</p>";
           echo "</div>";
           }
           mysqli_close($baza);
