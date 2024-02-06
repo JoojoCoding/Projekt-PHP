@@ -1,18 +1,7 @@
+<head>
+  <link rel="stylesheet" href="style.css">
+</head>
 <style>
-  ::-webkit-scrollbar {
-  width: 10px;
-}
-
-/* Track */
-::-webkit-scrollbar-track {
-  background: #333;
-}
-
-/* Handle */
-::-webkit-scrollbar-thumb {
-  background: #add8e6;
-  border-radius: 5px;
-}
     .client-form{
         width: 300px;
         margin: 0px 0px 0 300px;
@@ -33,7 +22,7 @@
     }
     .client-form {
           width: 500px;
-          margin: 0 auto;
+          margin: 6px;
           padding: 20px;
           background-color: #333;
           border-radius: 5px;
@@ -62,12 +51,12 @@
           cursor: pointer;
         }
         .client-box{
-          border: 2px solid #b0c4de;
-          padding: 10px;
+          border: 1px solid black;
+          padding: 15px;
           margin: 20px;
           width: 85%;
-          border-radius: 5px;
-          background-color: #add8e6;
+          border-radius: 7px;
+          background-color: #202020;
         }
         .clients-list{
           /* border: 1px solid rgb(0, 255, 221); */
@@ -75,17 +64,18 @@
           width: 500px;
           overflow-y: scroll;
           padding: 10px;
-          height: 90vh;
-          margin: 10px;
+          height: 93vh;
+          margin: 6px;
           /* text-align: center; */
           font-family: 'Montserrat', sans-serif ;
           background-color: #333;
         }
         .zar{
           color: white;
+          padding: 0 5px;
         }
         .client-name {
-          font-size: 30px;
+          font-size: 25px;
         }
 </style>
 

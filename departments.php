@@ -1,32 +1,14 @@
+<head>
+  <link rel="stylesheet" href="style.css">
+</head>
 <style>
-    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap');
-    ::-webkit-scrollbar {
-  width: 10px;
-}
-
-/* Track */
-::-webkit-scrollbar-track {
-  background: #333;
-}
-
-/* Handle */
-::-webkit-scrollbar-thumb {
-  background: #add8e6;
-  border-radius: 5px;
-}
-
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-  background: #555;
-}
     .depart{
         /* position: absolute;
         left: 350px; */
         display: flex;
         flex-direction: row;
         width: 100%;
-        height: 50%;
-        
+        height: 50%; 
     }
     .wrapper {
           max-width: 500px;
@@ -74,21 +56,22 @@
           overflow-y: scroll;
           height: 96vh;
           margin: 10px;
-          text-align: center;
+          text-align: left;
           font-family: 'Montserrat', sans-serif ;
           background-color: #333;
          
         }
         .zar{
           color: white;
+          padding: 0 15px;
         }
         .department-box{
-          border: 2px solid #b0c4de;
-          padding: 10px;
+          border: 1px solid #000;
+          padding: 15px;
           margin: 20px;
           width: 85%;
           border-radius: 5px;
-          background-color: #add8e6;
+          background-color: #202020;
         }
 </style>
 <?php

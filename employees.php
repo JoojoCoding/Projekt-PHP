@@ -4,8 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="style.css">
     <title>Document</title>
     <style>
+        
         section{
             display: flex;
             flex-direction: row;
@@ -13,17 +15,22 @@
         }
         .panel{
             width: 20%;
+            
         }
         .workerList{
             width: 80%;
-            border: 1px solid black;
             overflow-y: scroll;
+            background-color: #333;
+            border-radius: 5px; 
+
         }
         .worker{
             border: 1px solid black;
             display: flex;
             flex-direction: row;
             margin: 20px;
+            border-radius: 7px; 
+            background-color: #202020;
         }
         .bxs-user-circle {
             font-size: 100px;
@@ -40,7 +47,7 @@
             <?php include_once("incl/menuPanel.php"); ?>
         </div>
         <div class="workerList">
-            <h2>Pracownicy serwisu</h2>
+            <h2 style="text-align:center;">Pracownicy serwisu</h2>
         </div>
 
     </section>
