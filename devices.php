@@ -3,10 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>Document</title>
     <style>
         .device{
-            color: black;
+            color: white;
             text-align: center;
             border: 1px solid gray;
             padding: 10px;
@@ -72,10 +73,9 @@
                 })
                 if(!res.ok) throw new Error("Lol nie działa")
                 const data = await res.json()
+                console.log(data)
                 Build(data)
             }
-                
-                
         
         window.addEventListener('load', getData)
         const Build = (data) => {
@@ -92,7 +92,9 @@
             h2.innerText = `${data.producent} ${data.model}`
            
             let ptab = [`Producent: ${data.producent}`,
-            `Numer seryjny: ${data.nr_seryjny}`, `Kategoria: ${data.kategoria}`]
+            `Numer seryjny: ${data.nr_seryjny}`, `Kategoria: ${data.kategoria}`, 
+            `Data zgłoszenia: ${data.data_zgloszenia}`, `Data odbioru: ${data.data_odbioru}`, 
+            `Opis: ${data.opis}`, `Status: ${data.status}`, `Klient: ${data.klient}`, `Pracownik: ${data.pracownik}`]
             div.appendChild(h2)
             ptab.forEach(el => {
                 let p = d.createElement("p")

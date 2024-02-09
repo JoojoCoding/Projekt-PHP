@@ -1,4 +1,7 @@
 <!DOCTYPE html>
+<head>
+    <link rel="stylesheet" href="style.css">
+</head>
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap');
      .menu-panel{
@@ -9,8 +12,6 @@
         top: 0px;
         left: 0px;
         color: white;
-        
-
     }
     .circ{
         border: 2px solid white;
@@ -82,7 +83,7 @@
             <li><box-icon type='solid' name='buildings' color="white" size="cssSize" animation="tada-hover"></box-icon><a href="dashboard.php">Dane Oddziału</a></li>
             <li><box-icon type='solid' name='user-detail' color="white" size="cssSize" animation="tada-hover"></box-icon><a href="clientsPage.php">Klienci serwisu</a></li>
             <li><box-icon name='briefcase' type='solid' color="white" size="cssSize" animation="tada-hover"></box-icon><a href="employees.php">Pracownicy serwisu</a></li>
-            <li><box-icon type='solid' name='cabinet' color="white" size="cssSize" animation="tada-hover"></box-icon><a href="devices.php">Kartoteka sprzętu</a></li>
+            <li><box-icon type='solid' name='cabinet' color="white" size="cssSize" animation="tada-hover"></box-icon><!--<a href="devices.php">-->Kartoteka sprzętu<!--</a>--></li>
         </ul>
         
     </div>
